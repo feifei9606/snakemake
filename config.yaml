@@ -1,0 +1,13 @@
+units: "samples.csv"       # Complete the tab sep value file with the path to the files and their conditions
+
+### Genome and annotations
+refs:
+  genome:
+    "genome/fasta/tair10.fa"
+  transcriptome_gtf:
+    "genome/gtf/tair10.gtf"
+index:
+  indexpath:
+    "genome/index"
+  indexname:
+    "tair10"
