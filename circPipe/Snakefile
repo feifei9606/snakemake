@@ -1,0 +1,29 @@
+import pandas as pd
+from snakemake.utils import validate
+
+#### load snakemake config and sample sheets ####
+configfile : "config.yaml"
+validate(config, schema="schemas/config.schema.yaml")
+
+units = pd.read_csv("units.tsv",sep="\t",dtype=str)
+peFlag = pd.notnull(units.fq2).all()
+#### target rules ####
+rule all:
+    input: 
+        "02_qc/multiqc_report.html",
+        "01_data/index/bwa/makeidx.done",
+        "01_data/index/star/makeidx.done",
+        expand(["04_align/bwa/{u.sample}_bwa.sam","04_align/star/{u.sample}/Chimeric.out.junction", "04_align/star/{u.sample}/{mate}/Chimeric.out.junction", \
+               "05_output/ciri/{u.sample}_circRNA.csv",],u=units.itertuples()),
+        expand(["05_output/circexplorer/{aligner}/{u.sample}/bsj.bed"],u=units.itertuples(),aligner=("bwa","star")),
+        expand(["05_output/circexplorer/{aligner}/{u.sample}/circRNA_known.txt"],u=units.itertuples(),aligner=("bwa","star")),
+        "05_output/dcc/CircRNACount"
+
+
+#### load rules ####
+
+include : "rules/common.smk"
+include : "rules/qc.smk"
+include : "rules/trim.smk"
+include : "rules/align.smk"
+include : "rules/quant.smk"

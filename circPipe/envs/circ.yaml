@@ -1,0 +1,10 @@
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - python ==3.6
+  - fastqc ==0.11.8
+  - star ==2.7.3a
+  - bwa ==0.7.17
+  - circexplorer2==2.3.8
+  - ucsc-gtftogenepred

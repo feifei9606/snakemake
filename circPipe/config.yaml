@@ -1,0 +1,4 @@
+ref:
+    genome : "01_data/genome/hg19.fa"
+    annotation: "01_data/annotation/hg19.gtf"
+    prefix: "hg19"
