@@ -51,6 +51,8 @@ unzip CIRI_v2.0.6.zip
 ```bash
 source activate circpipe
 snakemake --use-conda -j 20
+## generate dag 
+snakemake --dag | dot -Tsvg > dag.svg
 ```
 
 ## Results Tree
