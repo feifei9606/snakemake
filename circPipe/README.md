@@ -86,11 +86,11 @@ This project is licensed under the MIT License
 ## Contributing
 
 - report bugs or features improvement, [Issues](https://github.com/feifei9606/snakemake/issues)
-- Pull Request(https://github.com/feifei9606/snakemake/pulls)
+- [Pull Request](https://github.com/feifei9606/snakemake/pulls)
 
 ## Acknowledgments
 
 * [andremrsantos/circrna_smk](https://github.com/andremrsantos/circrna_smk)
 * [iprada/circrna_snakemake](https://github.com/iprada/circrna_snakemake)
 * [snakemake-workflows/rna-seq-star-deseq2](https://github.com/iprada/circrna_snakemake)
-* [Reproducible research][https://reproducibility.sschmeier.com/]
+* [Reproducible research](https://reproducibility.sschmeier.com/)
