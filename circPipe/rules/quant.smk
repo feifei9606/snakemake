@@ -74,6 +74,7 @@ rule dcc:
     log : "logs/dcc/dcc.log"
     shell:
         """
+        source activate py2;
         DCC @{input.sheet[0]} {params.mates} -F -D -fg -G -Nr 5 1 {params.pi} -T {threads} -A {params.ref} -an {params.ann} -O {params.wkdir} -t {params.wkdir}/_tmp 2>{log}
         """
 
